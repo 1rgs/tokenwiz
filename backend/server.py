@@ -6,6 +6,7 @@ image = Image.debian_slim().pip_install(
     "torch",
     "pydantic",
     "fastapi",
+    "sentencepiece",
 )
 
 stub = Stub(name="tokenizer", image=image)
@@ -15,7 +16,6 @@ stub = Stub(name="tokenizer", image=image)
     container_idle_timeout=600,
     timeout=20 * 60,
     secret=Secret.from_name("tokenwiz"),
-
 )
 @asgi_app()
 def fastapi_app():

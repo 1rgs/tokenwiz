@@ -19,9 +19,7 @@ const App: React.FC = () => {
   const [enteredText, setEnteredText] = useState<string>(EXAMPLE_TEXT);
   const [tokenizedText, setTokenizedText] = useState<string>("");
 
-  const [tokenizerName, setTokenizerName] = useState<string>(
-    "meta-llama/Llama-2-7b-chat-hf"
-  );
+  const [tokenizerName, setTokenizerName] = useState<string>("");
   const [tokens, setTokens] = useState<
     | [number, [number, number]][]
     | {
@@ -93,13 +91,22 @@ const App: React.FC = () => {
       </label>
 
       <input
+        list="tokenizerNames"
         id="tokenizerName"
         type="text"
         value={tokenizerName}
         onChange={(e) => setTokenizerName(e.target.value)}
-        placeholder="Enter tokenizer name"
-        className="bg-gray-100 py-1 px-2 rounded-md text-sm  mt-2 mb-4"
+        placeholder="Enter tokenizer name or pick from dropdown"
+        className="bg-gray-100 py-1 px-2 rounded-md text-sm mt-2 mb-4"
       />
+      <datalist id="tokenizerNames">
+        <option value="google/flan-t5-xxl" />
+        <option value="meta-llama/Llama-2-7b-chat-hf" />
+        <option value="mistralai/Mistral-7B-v0.1" />
+        <option value="mosaicml/mpt-7b-storywriter" />
+        <option value="gpt2" />
+        <option value="adept/persimmon-8b-chat" />
+      </datalist>
 
       {"error" in tokens && (
         <div className="text-red-500 font-xs font-bold pb-4">
