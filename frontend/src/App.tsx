@@ -78,7 +78,15 @@ const App: React.FC = () => {
     <div className="flex flex-col mx-auto max-w-xl">
       <h2 className="text-2xl font-bold pb-4">Tokenwiz</h2>
 
-      <p className="pb-4">Huggingface Tokenizer Visualizer</p>
+      <p className="pb-4">
+        Hugging Face Tokenizer Visualizer, based off the{" "}
+        <a
+          href="https://platform.openai.com/tokenizer"
+          className="text-blue-500 hover:underline"
+        >
+          OpenAI Tokenizer page
+        </a>
+      </p>
 
       <label htmlFor="tokenizerName" className="font-bold">
         Tokenizer
