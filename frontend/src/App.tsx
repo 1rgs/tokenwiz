@@ -16,7 +16,7 @@ const EXAMPLE_TEXT =
   "Many words map to one token, but some don't: indivisible.\n\nUnicode characters like emojis may be split into many tokens containing the underlying bytes: 🤚🏾\n\nSequences of characters commonly found next to each other may be grouped together: 1234567890";
 
 const App: React.FC = () => {
-  const [enteredText, setEnteredText] = useState<string>("");
+  const [enteredText, setEnteredText] = useState<string>(EXAMPLE_TEXT);
   const [tokenizedText, setTokenizedText] = useState<string>("");
 
   const [tokenizerName, setTokenizerName] = useState<string>(
