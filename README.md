@@ -1,6 +1,6 @@
 # [Tokenwiz](https://tokenwiz.rahul.gs/)
 
-A clone of OpenAI's [Tokenizer](https://platform.openai.com/tokenizer) for HuggingFace Models.
+A clone of OpenAI's [Tokenizer page](https://platform.openai.com/tokenizer) for HuggingFace Models.
 
 See how your text tokenizes with different tokenizers.
 
