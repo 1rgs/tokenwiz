@@ -5,3 +5,5 @@ A clone of OpenAI's [Tokenizer](https://platform.openai.com/tokenizer) for Huggi
 See how your text tokenizes with different tokenizers.
 
 ### [https://tokenwiz.rahul.gs/](https://tokenwiz.rahul.gs/)
+
+![Picture](/pic.png)
