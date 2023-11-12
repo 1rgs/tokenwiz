@@ -76,7 +76,7 @@ const App: React.FC = () => {
   const [mode, setMode] = useState<"text" | "token_ids">("text");
   return (
     <div className="flex flex-col mx-auto max-w-xl">
-      <h2 className="text-2xl font-bold pb-4">Tokenviz</h2>
+      <h2 className="text-2xl font-bold pb-4">Tokenwiz</h2>
 
       <p className="pb-4">Huggingface Tokenizer Visualizer</p>
 
