@@ -19,7 +19,9 @@ const App: React.FC = () => {
   const [enteredText, setEnteredText] = useState<string>(EXAMPLE_TEXT);
   const [tokenizedText, setTokenizedText] = useState<string>("");
 
-  const [tokenizerName, setTokenizerName] = useState<string>("");
+  const [tokenizerName, setTokenizerName] = useState<string>(
+    "meta-llama/Llama-2-7b-chat-hf"
+  );
   const [tokens, setTokens] = useState<
     | [number, [number, number]][]
     | {
@@ -87,7 +89,7 @@ const App: React.FC = () => {
       </p>
 
       <label htmlFor="tokenizerName" className="font-bold">
-        Tokenizer
+        Tokenizer (click to pick from dropdown)
       </label>
 
       <input
@@ -114,8 +116,12 @@ const App: React.FC = () => {
         </div>
       )}
 
+      <label htmlFor="text" className="font-bold">
+        Text
+      </label>
       <textarea
-        className="border-2 border-gray-300 rounded-md w-full h-32 p-2"
+        id="text"
+        className="border-2 border-gray-300 rounded-md w-full h-32 p-2  my-2"
         value={enteredText}
         onChange={(e) => setEnteredText(e.target.value)}
         placeholder="Enter some text"
