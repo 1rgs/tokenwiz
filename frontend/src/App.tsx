@@ -61,6 +61,7 @@ const App: React.FC = () => {
   const debounced = useCallback(debounce(handleTokenization, 500), []);
 
   useEffect(() => {
+    setLoading(true);
     debounced(enteredText, tokenizerName);
   }, [debounced, enteredText, tokenizerName]);
 
@@ -149,7 +150,7 @@ const App: React.FC = () => {
           <div className="font-bold">Tokens</div>
           <div className="font-bold">Characters</div>
           <div>{"error" in tokens ? 0 : tokens.length}</div>
-          <div>{enteredText.length}</div>
+          <div>{tokenizedText.length}</div>
         </div>
 
         {!("error" in tokens) && tokens.length > 0 && (
