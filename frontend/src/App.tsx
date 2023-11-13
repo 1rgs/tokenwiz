@@ -1,6 +1,5 @@
-// src/App.tsx
 import React, { useCallback, useEffect, useState } from "react";
-// add app.css
+
 import "./App.css";
 import debounce from "lodash.debounce";
 
@@ -159,7 +158,8 @@ const App: React.FC = () => {
               tokens.map((token, index) => (
                 <Token
                   key={index}
-                  token={token}
+                  startIdx={token[1][0]}
+                  endIdx={token[1][1]}
                   index={index}
                   text={tokenizedText}
                 />
@@ -194,18 +194,22 @@ const App: React.FC = () => {
 };
 
 const Token: React.FC<{
-  token: [number, [number, number]];
+  startIdx: number;
+  endIdx: number;
   index: number;
   text: string;
-}> = ({ text, token, index }) => {
+}> = React.memo(({ text, startIdx, endIdx, index }) => {
+  const charArray = Array.from(text);
+  const slicedCharArray = charArray.slice(startIdx, endIdx);
+  const slicedText = slicedCharArray.join("");
+
   return (
     <span
       style={{ backgroundColor: COLORS[index % COLORS.length] }}
       key={index}
     >
-      {text.slice(token[1][0], token[1][1])}
+      {slicedText}
     </span>
   );
-};
-
+});
 export default App;
