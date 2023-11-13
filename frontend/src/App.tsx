@@ -154,7 +154,7 @@ const App: React.FC = () => {
         </div>
 
         {!("error" in tokens) && tokens.length > 0 && (
-          <div className="p-2 bg-gray-100 rounded-md mt-4 whitespace-pre-wrap">
+          <div className="p-2 bg-gray-100 rounded-md mt-4 whitespace-pre-wrap break-words">
             {mode === "text" ? (
               tokens.map((token, index) => (
                 <Token
